@@ -1,17 +1,55 @@
-# sbolb_assistant_mobile
+# СберБизнес — мобильное приложение
 
-A new Flutter project.
+Flutter-приложение — мобильная версия клиента СберБизнес. На текущем этапе реализован каркас навигации и базовые экраны; интеграция с AI-помощником Дейлом планируется.
 
-## Getting Started
+Связанные репозитории: backend (`server`), веб-клиент (`sbolb_assistant_web`).
 
-This project is a starting point for a Flutter application.
+## Стек
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter 3.12+
+- flutter_bloc
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Требования
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Flutter SDK](https://docs.flutter.dev/get-started/install)
+- Android Studio / Xcode (для эмуляторов и сборки)
+
+## Запуск
+
+```bash
+cd sbolb_assistant_mobile
+flutter pub get
+flutter run
+```
+
+Для конкретной платформы:
+
+```bash
+flutter run -d chrome    # веб
+flutter run -d windows   # Windows
+flutter devices          # список доступных устройств
+```
+
+## Структура
+
+```
+lib/
+  app.dart              # корневой виджет
+  main.dart             # точка входа
+  core/                 # тема, навигация, константы
+  features/
+    home/               # главная
+    payments/           # платежи
+    documents/          # документы
+    products/           # продукты
+    info/               # информация
+```
+
+## Сборка
+
+```bash
+flutter build apk        # Android
+flutter build ios        # iOS (только на macOS)
+flutter build web        # Web
+```
+
